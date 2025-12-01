@@ -1,0 +1,5 @@
+web3==6.15.1
+pillow==10.1.0
+imagehash==4.3.1
+invisible-watermark==0.3.0
+pytest==8.3.2
