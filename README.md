@@ -32,17 +32,20 @@ cd python-client
 pip install -r requirements.txt
 export PRIVATE_KEY=0xYourWalletPrivateKey  # From Coinbase; secure!
 python pog_client.py path/to/image.png --prompt "A cat in space" --tool ComfyUI --model Flux
+```
 
 Outputs tx hash. Check Basescan Events for Generated log.
 
-Verify (Users)
-Bashcd ../verifier
+### Verify (Users)
+```Bash
+cd ../verifier
 pip install -r requirements.txt
 python pog_verifier.py path/to/image.png
+```
 
 JSON with tiered signal (e.g., "Strong: Watermarked AI, PoG match").
 
-Features
+## Features
 
 Dual Hashes: Exact keccak(bytes) + perceptual (pHash for compress/crop).
 Derivations: parentHash for edits.
@@ -53,30 +56,37 @@ Tiered Detection: Strong/Medium/Weak/None.
 Privacy: Hashes only—no PII.
 Versioned: v2 events; extensible.
 
-Installation & Usage
+## Installation & Usage
 Python 3.10+. Base wallet with ETH.
-Client
-Pythonfrom pog_client import PoGClient
+# Client
+```Python
+from pog_client import PoGClient
 client = PoGClient(private_key=os.getenv('PRIVATE_KEY'))
 tx = client.register('image.png', tool='ComfyUI', prompt='A cat')
 print(f"https://basescan.org/tx/{tx}")
-Verifier
-Bashpython pog_verifier.py image.png
-Testing
+```
+
+# Verifier
+```bash
+python pog_verifier.py image.png
+```
+## Testing
+
 pip install pytest
 pytest python-client/tests/ -v
 pytest verifier/tests/ -v
-Limitations & Warnings
+
+## Limitations & Warnings
 
 Proves claims, not truth (evadable by attacks).
 User pays gas (~$0.001/tx).
 Pseudonymous; hash prompts only.
 
-Adoption Guide
+## Adoption Guide
 See docs/adoption-guide.md.
-Roadmap
+## Roadmap
 v1.1: Gasless. v2.0: Multi-chain.
-Contributing
+## Contributing
 Fork → PR to main. Conventional commits.
-License
-Apache 2.0 © 2025 [Your Name]. See LICENSE.
+## License
+Apache 2.0 © 2025 [TamTunnel]. See LICENSE.
