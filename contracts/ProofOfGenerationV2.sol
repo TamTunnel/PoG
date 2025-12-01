@@ -2,21 +2,19 @@
 pragma solidity ^0.8.24;
 
 contract ProofOfGenerationV2 {
-    // Versioned event for future-proofing (v2 adds perceptualHash, pipeline, parentHash, attesterSig)
     event Generated(
-        bytes32 indexed contentHash,      // keccak256(exact bytes)
-        bytes32 indexed perceptualHash,   // keccak256(pHash for fuzzy matching)
-        string indexed tool,              // e.g., "ComfyUI"
-        string pipeline,                  // e.g., "ComfyUI:Flux|Upscayl:ESRGAN" (delimited)
+        bytes32 indexed contentHash,      // keccak256(exact image bytes)
+        bytes32 indexed perceptualHash,   // keccak256(pHash) – fuzzy matching
+        string indexed tool,              // e.g., "ComfyUI", "Midjourney"
+        string pipeline,                  // e.g., "ComfyUI:Flux|Upscayl"
         bytes32 paramsHash,               // keccak256(prompt+seed+cfg+steps)
-        bytes32 parentHash,               // 0x000... for original; else prior contentHash
-        bytes32 attesterSig,              // Optional ECDSA sig from registered tool (off-chain verify)
+        bytes32 parentHash,               // 0x0… for original, else prior contentHash
+        bytes32 attesterSig,              // optional ECDSA sig from trusted tool
         uint256 timestamp,
-        address registrar,                // msg.sender (pseudonymous)
-        uint16 version                    // 2 for this contract
+        address registrar,
+        uint16 version                    // 2 = this contract
     );
 
-    // Single registration
     function register(
         bytes32 contentHash,
         bytes32 perceptualHash,
@@ -36,11 +34,10 @@ contract ProofOfGenerationV2 {
             attesterSig,
             block.timestamp,
             msg.sender,
-            2  // v2
+            2
         );
     }
 
-    // Batch for videos/efficiency (e.g., frames)
     function registerBatch(
         bytes32[] calldata contentHashes,
         bytes32[] calldata perceptualHashes,
@@ -55,8 +52,9 @@ contract ProofOfGenerationV2 {
             contentHashes.length == paramsHashes.length &&
             contentHashes.length == parentHashes.length &&
             contentHashes.length == attesterSigs.length,
-            "length mismatch"
+            "array length mismatch"
         );
+
         for (uint i = 0; i < contentHashes.length; i++) {
             emit Generated(
                 contentHashes[i],
@@ -68,7 +66,7 @@ contract ProofOfGenerationV2 {
                 attesterSigs[i],
                 block.timestamp,
                 msg.sender,
-                2  // v2
+                2
             );
         }
     }
