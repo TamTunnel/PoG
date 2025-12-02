@@ -34,6 +34,7 @@ Today there is no easy, open, trustworthy way to answer:
 - Was it edited later?
 - Can the creator prove they made it first?
 - Can the creator still stay anonymous?
+- Is it possible to do this at an extremely low cost?
 
 Big companies have closed solutions.
 Open-source had nothing that actually works today.
