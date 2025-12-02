@@ -6,7 +6,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Base Chain](https://img.shields.io/badge/Chain-Base%20Mainnet-blueviolet.svg)](https://base.org)
 
-PoG  is a lightweight, permissionless blockchain registry for AI-generated images/videos on Base L2 (~$0.001/tx). Records immutable metadata (tool, model, timestamp, pipeline, derivations) via events. Pairs with invisible watermarking for detection hints (not foolproof— but raises bar for 90+ % bad actors).
+PoG  is a lightweight, permissionless blockchain registry for AI-generated images/videos on Base L2 (~$0.001/tx). Records immutable metadata (tool, model, timestamp, pipeline, derivations) via events. Pairs with invisible watermarking for detection hints (not foolproof— but raises bar for most bad actors).
 
 **Deployed Contract**: [0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3](https://basescan.org/address/0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3) (Base Mainnet, v2).
 
