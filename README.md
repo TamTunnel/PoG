@@ -26,6 +26,7 @@ PoG v2 is a lightweight, permissionless blockchain registry for AI-generated ima
 Contract live at [Basescan](https://basescan.org/address/0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3). Source in `/contracts`.
 
 - **Full Spec**: [pog-v2.json](spec/pog-v2.json) — Event schema, hashes, attester rules for re-implementations.
+- Watermark + Register in 5 lines: docs/watermark-integration.md
 
 ### Register (Generators)
 ```bash
@@ -57,6 +58,7 @@ Batch: For videos.
 Tiered Detection: Strong/Medium/Weak/None.
 Privacy: Hashes only—no PII.
 Versioned: v2 events; extensible.
+Tool attesters → Strong tier: [docs/attesters.md](docs/attesters.md)
 
 ## Installation & Usage
 Python 3.10+. Base wallet with ETH.
@@ -87,7 +89,9 @@ Pseudonymous; hash prompts only.
 ## Adoption Guide
 See docs/adoption-guide.md.
 ## Roadmap
-v1.1: Gasless. v2.0: Multi-chain.
+- Gasless relayer (zero user cost): [docs/gasless.md](docs/gasless.md) ← Q1 2026
+- Threat model & honesty: [docs/threat-model.md](docs/threat-model.md)
+- Multi-chain + ZK proofs: 2026–2027
 ## Contributing
 Fork → PR to main. Conventional commits.
 ## License
