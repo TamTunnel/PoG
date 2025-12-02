@@ -25,6 +25,8 @@ PoG v2 is a lightweight, permissionless blockchain registry for AI-generated ima
 ### Deploy (Done)
 Contract live at [Basescan](https://basescan.org/address/0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3). Source in `/contracts`.
 
+- **Full Spec**: [pog-v2.json](spec/pog-v2.json) — Event schema, hashes, attester rules for re-implementations.
+
 ### Register (Generators)
 ```bash
 git clone https://github.com/[yourusername]/PoG
