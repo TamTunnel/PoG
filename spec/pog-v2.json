@@ -1,0 +1,46 @@
+{
+  "specVersion": "2.0",
+  "name": "Proof-of-Generation (PoG)",
+  "description": "Open standard for registering AI media provenance on Base L2. Privacy-first: hashes only, no PII/raw media.",
+  "contract": {
+    "address": "0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3",
+    "chainId": 8453,
+    "abiVersion": "0.8.24"
+  },
+  "eventSchema": {
+    "name": "Generated",
+    "fields": [
+      {"name": "contentHash", "type": "bytes32", "indexed": true, "description": "keccak256(exact bytes of image/video)"},
+      {"name": "perceptualHash", "type": "bytes32", "indexed": true, "description": "keccak256(pHash of normalized thumbnail; fuzzy match for edits/compress)"},
+      {"name": "tool", "type": "string", "indexed": true, "description": "Generator tool (e.g., 'ComfyUI')"},
+      {"name": "pipeline", "type": "string", "description": "Multi-tool chain (e.g., 'ComfyUI:Flux|Upscayl:ESRGAN')"},
+      {"name": "paramsHash", "type": "bytes32", "description": "keccak256(prompt + seed + cfg + steps; opaque for privacy)"},
+      {"name": "parentHash", "type": "bytes32", "description": "0x00... for original; else prior contentHash for derivations"},
+      {"name": "attesterSig", "type": "bytes32", "description": "Optional ECDSA sig from tool's official key (self-claim if 0x00...)"},
+      {"name": "timestamp", "type": "uint256", "description": "Block timestamp (creation time)"},
+      {"name": "registrar", "type": "address", "description": "Pseudonymous wallet that registered"},
+      {"name": "version", "type": "uint16", "description": "2 for v2; filterable for schema evolution"}
+    ]
+  },
+  "hashAlgorithms": {
+    "exact": "keccak256(full bytes)",
+    "perceptual": "imagehash.phash(Image.open(path).resize(8,8)) → keccak256(64-bit hash)",
+    "params": "keccak256(utf8(prompt + str(seed) + str(cfg) + str(steps)))"
+  },
+  "pipelineEncoding": "Delimited string: 'tool1:model1|tool2:model2' (max 128 chars)",
+  "attesterSemantics": {
+    "selfClaim": "attesterSig = 0x00...",
+    "toolAttested": "ECDSA sig of contentHash + tool over tool's public key",
+    "registry": "Off-chain JSON list of tool → pubkey; future: on-chain contract"
+  },
+  "threatModel": {
+    "evasionCost": "$0.001 per fake reg; ~80% watermark strip success",
+    "robustness": "Survives JPEG 50%, 50% crop/resize; fails heavy edits",
+    "privacy": "No raw data on-chain; registrar anonymous"
+  },
+  "functions": {
+    "register": "Single image/video",
+    "registerBatch": "For videos (arrays of hashes)"
+  },
+  "nextVersion": "3.0 (multi-chain, ZK proofs)"
+}
