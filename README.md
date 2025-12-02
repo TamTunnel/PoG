@@ -118,7 +118,7 @@ JSON with tiered signal (e.g., "Strong: Watermarked AI, PoG match").
 - Privacy: Hashes only—no PII.
 - Versioned: v2 events; extensible.
 - Tool attesters → Strong tier: [docs/attesters.md](docs/attesters.md)
-- OpenAI plugin spec - [pog-v2.openapi.yaml](spec/pog-v2.openapi.yaml) (auto-generated SDKs)
+- OpenAPI plugin spec - [pog-v2.openapi.yaml](spec/pog-v2.openapi.yaml) (auto-generated SDKs)
 - Creator anonymity: **The on-chain receipt shows only a random Ethereum wallet address — no name, email, or IP. You stay 100 % pseudonymous while proving creation. (Tools can optionally sign for "Strong" trust without revealing you.)**
 
   
