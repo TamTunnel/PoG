@@ -11,8 +11,8 @@ PoG  is a lightweight, permissionless blockchain registry for AI-generated image
 **Deployed Contract**: [0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3](https://basescan.org/address/0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3) (Base Mainnet, v2).
 
 ## Table of Contents
-- [Quick Start](#quick-start)
 - [Problem Statement](#problem-statement)
+- [Quick Start](#quick-start)
 - [Features](#features)
 - [Installation & Usage](#installation--usage)
 - [Testing](#testing)
@@ -21,6 +21,33 @@ PoG  is a lightweight, permissionless blockchain registry for AI-generated image
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
+
+## Problem Statement
+**The Problem we are solving**
+
+Every day millions of AI images and videos are created.
+Most of them look completely real.
+Today there is no easy, open, trustworthy way to answer:
+
+- Was this made by AI or by a human?
+- Which tool and settings were used?
+- Was it edited later?
+- Can the creator prove they made it first?
+- Can the creator still stay anonymous?
+
+Big companies have closed solutions.
+Open-source had nothing that actually works today.
+
+#### Advantages vs Everything Else
+
+|                         | PoG v2 (us)           | C2PA (Adobe etc.)     | Closed commercial tools |
+|-------------------------|-----------------------|-----------------------|-------------------------|
+| Open source             | Yes                   | Partially             | No                      |
+| Works today             | Yes                   | Mostly future         | Yes (paid)              |
+| Costs ~$0.001 or less   | Yes                   | Free (metadata only)  | Expensive             |
+| Survives metadata strip | Yes (watermark + hash)| No (metadata easy to remove) | Sometimes     |
+| Privacy (no raw files)  | 100 %                 | 100 %                 | Varies                  |
+| Anyone can verify       | Drag & drop           | Needs special tools   | Needs their app         |
 
 ## Quick Start
 ### Deploy (Done)
@@ -78,21 +105,6 @@ python pog_verifier.py path/to/image.png
 
 JSON with tiered signal (e.g., "Strong: Watermarked AI, PoG match").
 
-## Problem Statement
-The Problem we are solving
-
-Every day millions of AI images and videos are created.
-Most of them look completely real.
-Today there is no easy, open, trustworthy way to answer:
-
-Was this made by AI or by a human?
-Which tool and settings were used?
-Was it edited later?
-Can the creator prove they made it first?
-
-Big companies have closed solutions.
-Open-source had nothing that actually works today.
-
 
 ## Features
 
@@ -106,17 +118,8 @@ Open-source had nothing that actually works today.
 - Versioned: v2 events; extensible.
 - Tool attesters → Strong tier: [docs/attesters.md](docs/attesters.md)
 - OpenAI plugin spec - [pog-v2.openapi.yaml](spec/pog-v2.openapi.yaml) (auto-generated SDKs)
+- Creator anonymity: **The on-chain receipt shows only a random Ethereum wallet address — no name, email, or IP. You stay 100 % pseudonymous while proving creation. (Tools can optionally sign for "Strong" trust without revealing you.)**
 
-## Advantages vs Everything Else
-
-|                         | PoG v2 (us)           | C2PA (Adobe etc.)     | Closed commercial tools |
-|-------------------------|-----------------------|-----------------------|-------------------------|
-| Open source             | Yes                   | Partially             | No                      |
-| Works today             | Yes                   | Mostly future         | Yes (paid)              |
-| Costs ~$0.001 or less   | Yes                   | Free (metadata only)  | Expensive             |
-| Survives metadata strip | Yes (watermark + hash)| No (metadata easy to remove) | Sometimes     |
-| Privacy (no raw files)  | 100 %                 | 100 %                 | Varies                  |
-| Anyone can verify       | Drag & drop           | Needs special tools   | Needs their app         |
   
 ## Installation & Usage
 Python 3.10+. Base wallet with ETH.
