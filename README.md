@@ -27,7 +27,8 @@ Contract live at [Basescan](https://basescan.org/address/0xf0D814C2Ff842C695fCd6
 
 - **Full Spec**: [pog-v2.json](spec/pog-v2.json) — Event schema, hashes, attester rules for re-implementations.
 - Watermark + Register in 5 lines: docs/watermark-integration.md
-
+- Web / OpenAI plugin devs → use the OpenAPI spec: [pog-v2.openapi.yaml](spec/pog-v2.openapi.yaml) (auto-generated SDKs)
+  
 ### Register (Generators)
 ```bash
 git clone https://github.com/[yourusername]/PoG
@@ -50,16 +51,17 @@ JSON with tiered signal (e.g., "Strong: Watermarked AI, PoG match").
 
 ## Features
 
-Dual Hashes: Exact keccak(bytes) + perceptual (pHash for compress/crop).
-Derivations: parentHash for edits.
-Pipelines: Multi-tool (e.g., "ComfyUI:Flux|Runway:Edit").
-Attesters: Optional ECDSA sigs from tools.
-Batch: For videos.
-Tiered Detection: Strong/Medium/Weak/None.
-Privacy: Hashes only—no PII.
-Versioned: v2 events; extensible.
-Tool attesters → Strong tier: [docs/attesters.md](docs/attesters.md)
-
+- Dual Hashes: Exact keccak(bytes) + perceptual (pHash for compress/crop).
+- Derivations: parentHash for edits.
+- Pipelines: Multi-tool (e.g., "ComfyUI:Flux|Runway:Edit").
+- Attesters: Optional ECDSA sigs from tools.
+- Batch: For videos.
+- Tiered Detection: Strong/Medium/Weak/None.
+- Privacy: Hashes only—no PII.
+- Versioned: v2 events; extensible.
+- Tool attesters → Strong tier: [docs/attesters.md](docs/attesters.md)
+- OpenAI plugin spec - [pog-v2.openapi.yaml](spec/pog-v2.openapi.yaml) (auto-generated SDKs)
+  
 ## Installation & Usage
 Python 3.10+. Base wallet with ETH.
 # Client
