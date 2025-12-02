@@ -23,7 +23,35 @@ PoG v2 is a lightweight, permissionless blockchain registry for AI-generated ima
 
 ## Quick Start
 ### Deploy (Done)
-Contract live at [Basescan](https://basescan.org/address/0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3). Source in `/contracts`.
+
+**One-click verifiable AI images & videos** — watermark + on-chain receipt for ~$0.001  
+Live contract: [`0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3`](https://basescan.org/address/0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3)
+
+**Strong** = watermarked + tool-signed + on-chain  
+**Medium/Weak** = someone paid to claim it (still evidence)
+
+### For Web / React / Next.js / OpenAI Plugin Developers (30-second integration)
+```bash
+npx openapi-generator-cli generate -i https://raw.githubusercontent.com/TamTunnel/PoG/main/spec/pog-v2.openapi.yaml -g typescript-fetch -o src/pog-client
+```
+
+
+- Perfect TypeScript client with full types & docs
+- OpenAPI spec
+  
+### For Python / ComfyUI / A1111 / InvokeAI Developers (5 lines)
+```python
+from pog_client import PoGClient
+client = PoGClient(private_key=os.getenv("PRIVATE_KEY"))
+tx = client.register("output.png", tool="ComfyUI", prompt="cyber cat")
+print(f"https://basescan.org/tx/{tx}")
+```
+### Verify any image (drag & drop)
+```python
+python verifier/pog_verifier.py image.png
+# → Strong / Medium / Weak / None + full provenance
+```
+
 
 - **Full Spec**: [pog-v2.json](spec/pog-v2.json) — Event schema, hashes, attester rules for re-implementations.
 - Watermark + Register in 5 lines: docs/watermark-integration.md
