@@ -12,6 +12,7 @@ PoG v2 is a lightweight, permissionless blockchain registry for AI-generated ima
 
 ## Table of Contents
 - [Quick Start](#quick-start)
+- [Problem Statement](#problem-statement)
 - [Features](#features)
 - [Installation & Usage](#installation--usage)
 - [Testing](#testing)
@@ -77,6 +78,22 @@ python pog_verifier.py path/to/image.png
 
 JSON with tiered signal (e.g., "Strong: Watermarked AI, PoG match").
 
+## Problem Statement
+The Problem we are solving
+
+Every day millions of AI images and videos are created.
+Most of them look completely real.
+Today there is no easy, open, trustworthy way to answer:
+
+Was this made by AI or by a human?
+Which tool and settings were used?
+Was it edited later?
+Can the creator prove they made it first?
+
+Big companies have closed solutions.
+Open-source had nothing that actually works today.
+
+
 ## Features
 
 - Dual Hashes: Exact keccak(bytes) + perceptual (pHash for compress/crop).
@@ -89,6 +106,17 @@ JSON with tiered signal (e.g., "Strong: Watermarked AI, PoG match").
 - Versioned: v2 events; extensible.
 - Tool attesters → Strong tier: [docs/attesters.md](docs/attesters.md)
 - OpenAI plugin spec - [pog-v2.openapi.yaml](spec/pog-v2.openapi.yaml) (auto-generated SDKs)
+
+## Advantages vs Everything Else
+
+|                         | PoG v2 (us)           | C2PA (Adobe etc.)     | Closed commercial tools |
+|-------------------------|-----------------------|-----------------------|-------------------------|
+| Open source             | Yes                   | Partially             | No                      |
+| Works today             | Yes                   | Mostly future         | Yes (paid)              |
+| Costs ~$0.001 or less   | Yes                   | Free (metadata only)  | Expensive             |
+| Survives metadata strip | Yes (watermark + hash)| No (metadata easy to remove) | Sometimes     |
+| Privacy (no raw files)  | 100 %                 | 100 %                 | Varies                  |
+| Anyone can verify       | Drag & drop           | Needs special tools   | Needs their app         |
   
 ## Installation & Usage
 Python 3.10+. Base wallet with ETH.
