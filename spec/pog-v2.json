@@ -34,8 +34,8 @@
     "registry": "Off-chain JSON list of tool → pubkey; future: on-chain contract"
   },
   "threatModel": {
-    "evasionCost": "$0.001 per fake reg; ~80% watermark strip success",
-    "robustness": "Survives JPEG 50%, 50% crop/resize; fails heavy edits",
+    "evasionCost": "low cost to register; not resistant to spam",
+    "robustness": "Robust aggainst moderate compression; fragile under heavy edits",
     "privacy": "No raw data on-chain; registrar anonymous"
   },
   "functions": {
