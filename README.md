@@ -1,5 +1,5 @@
 
-# PoG (Proof-of-Generation) v2: Open Source Privacy-First AI Media Watermarking Provenance Registry
+# PoG (Proof-of-Generation) : Open Source Privacy-First AI Media Watermarking Provenance Registry
 
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
