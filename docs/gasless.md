@@ -21,4 +21,4 @@ The demo proves it's possible today. Join us to make it permanent!
 
 Result: Even bad actors need to run their own relayer or pay → lying stops being free.
 
-Want to help build/run the relayer? Open an issue — we’ll add you to the list!
+Want to help run the relayer? Open an issue — we’ll add you to the list!
