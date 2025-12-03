@@ -1,17 +1,18 @@
-# PoG Gasless Relayer — Coming Q1 2026 (Zero User Cost)
+# PoG Gasless Relayer – Live Demo + Full Plan
 
-Goal: Users never need ETH or a wallet again.
+## Live Demo (Test Today – 100 % Free)
+- **URL**: [https://pog.lzzo.net](https://pog.lzzo.net)
+- Drop any AI image → invisible watermark + on-chain registration (I pay the gas)
+- Optional download of watermarked file
+- Instant verification on the same page
+- Source: https://github.com/TamTunnel/pog-gasless-demo
 
-### How It Will Work (Simple & Secure)
-1. User signs a free EIP-712 message with their wallet (or Passkey in browser)
-2. Message goes to public relayer (run by TamTunnel + community)
-3. Relayer batches 100–1000 registrations → pays gas once → submits
-4. Average user cost = **$0.000**
+## How to Keep It Free
+Send any amount of Base ETH to:  
+`0x97D240c4E2aad5601402726d676ee3Fe2E97EfA6`  
+Or [buy me a coffee](https://buymeacoffee.com/tamtunnel)
 
-### Tech Stack (Already Tested)
-- EIP-712 signed messages (no gas to sign)
-- ERC-2771 + minimal forwarder (or Biconomy/GSN v3)
-- Base Sepolia testnet version ready for demo
+The demo proves it's possible today. Join us to make it permanent!
 
 ### Why This Removes 99% of Friction
 - No seed phrases
