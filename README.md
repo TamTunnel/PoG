@@ -56,6 +56,14 @@ Open-source had nothing that actually works today.
 **One-click verifiable AI images & videos** — watermark + on-chain receipt for ~$0.001  
 Live contract: [`0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3`](https://basescan.org/address/0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3)
 
+### Try the Gasless Demo (Free Forever)
+Test PoG without a wallet — we pay the gas!
+
+- **Live Demo**: [https://pog.lzzo.net](https://pog.lzzo.net) — Drop AI image → watermark + register free
+- **Features**: Dark mode, optional download, real on-chain tx, instant verification
+- **Source**: [pog-gasless-demo repo](https://github.com/TamTunnel/pog-gasless-demo)
+- **Help keep it free**: Send Base ETH to `0x97D240c4E2aad5601402726d676ee3Fe2E97EfA6` or [Buy me a coffee](https://buymeacoffee.com/tamtunnel)
+
 **Strong** = watermarked + tool-signed + on-chain  
 **Medium/Weak** = someone paid to claim it (still evidence)
 
@@ -120,6 +128,7 @@ JSON with tiered signal (e.g., "Strong: Watermarked AI, PoG match").
 - Tool attesters → Strong tier: [docs/attesters.md](docs/attesters.md)
 - OpenAPI plugin spec - [pog-v2.openapi.yaml](spec/pog-v2.openapi.yaml) (auto-generated SDKs)
 - Creator anonymity: **The on-chain receipt shows only a random Ethereum wallet address — no name, email, or IP. You stay 100 % pseudonymous while proving creation. (Tools can optionally sign for "Strong" trust without revealing you.)**
+  **Note: Gas-less mode shows only the relayer wallet address, so the creator's wallet address is not linked at all - making this completely anonymous**
 
   
 ## Installation & Usage
