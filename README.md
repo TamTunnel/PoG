@@ -8,6 +8,9 @@
 
 PoG  is a lightweight, permissionless blockchain registry for AI-generated images/videos on Base L2 (~$0.001/tx). Records immutable metadata (tool, model, timestamp, pipeline, derivations) via events. Pairs with invisible watermarking for detection hints (not foolproof— but raises bar for most bad actors).
 
+## Simple Analogy (Layman's explanation): 
+PoG is an open‑source, privacy‑first provenance registry that lets AI tools cheaply log when and how images or videos were generated on-chain without revealing user identities. Think of it like public receipts for AI media: every time a generator creates an image or video, PoG issues a cryptographic “receipt” that anyone can later check, without exposing the buyer’s name or the contents of the receipt itself.
+
 **Deployed Contract**: [0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3](https://basescan.org/address/0xf0D814C2Ff842C695fCd6814Fa8776bEf70814F3) (Base Mainnet, v2).
 
 ## Table of Contents
